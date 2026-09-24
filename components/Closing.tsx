@@ -18,7 +18,7 @@ export default function Closing() {
       gsap.fromTo(
         `.${s.lem}`,
         { drawSVG: "0% 0%" },
-        { drawSVG: "0% 100%", ease: "none", scrollTrigger: { trigger: ref.current, start: "top 80%", end: "center center", scrub: 1 } }
+        { drawSVG: "0% 100%", duration: 3, ease: "power2.inOut", scrollTrigger: { trigger: ref.current, start: "top 70%" } }
       );
       gsap.fromTo(`.${s.lemGlow}`, { drawSVG: "0% 8%" }, { drawSVG: "92% 100%", duration: 6, repeat: -1, ease: "none" });
       const split = SplitText.create(`.${s.title}`, { type: "lines", mask: "lines", linesClass: "split-line" });

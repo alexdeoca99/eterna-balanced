@@ -38,13 +38,13 @@ const vert = /* glsl */ `
 
     // pointer pushes particles away
     vec2 dm = p.xy - uMouse;
-    float f = exp(-dot(dm, dm) * 1.6);
-    p.xy += normalize(dm + 1e-4) * f * 0.55;
-    p.z += f * 0.8;
+    float f = exp(-dot(dm, dm) * 2.2);
+    p.xy += normalize(dm + 1e-4) * f * 0.16;
+    p.z += f * 0.15;
 
     vec4 mv = modelViewMatrix * vec4(p, 1.0);
     gl_Position = projectionMatrix * mv;
-    gl_PointSize = aSize * uPR * (26.0 / -mv.z) * (1.0 + f * 1.4);
+    gl_PointSize = aSize * uPR * (26.0 / -mv.z) * (1.0 + f * 0.35);
     vHue = aHue;
     vAlpha = (0.55 + 0.45 * sin(uTime * 1.5 + aT * 12.0)) * (1.0 - uScroll * 0.9);
   }
@@ -174,9 +174,9 @@ export default function InfinityField({ className }: { className?: string }) {
       raf = requestAnimationFrame(loop);
       if (!visible) return;
       uniforms.uTime.value = clock.getElapsedTime();
-      uniforms.uMouse.value.lerp(target, 0.08);
-      group.rotation.y += (tilt.x * 0.35 - group.rotation.y) * 0.04;
-      group.rotation.x += (-tilt.y * 0.2 - group.rotation.x) * 0.04;
+      uniforms.uMouse.value.lerp(target, 0.05);
+      group.rotation.y += (tilt.x * 0.1 - group.rotation.y) * 0.03;
+      group.rotation.x += (-tilt.y * 0.06 - group.rotation.x) * 0.03;
       renderer.render(scene, camera);
     };
     if (reduced) {

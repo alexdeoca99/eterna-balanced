@@ -12,7 +12,7 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  width: min(1400px, 130vw);
+  width: min(1400px, 96vw);
   translate: -50% -50%;
   z-index: -1;
   overflow: visible;

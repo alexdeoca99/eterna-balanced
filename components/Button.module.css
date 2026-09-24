@@ -6,6 +6,7 @@
   padding: 0 28px;
   border: 1px solid transparent;
   border-radius: 999px;
+  background: none; /* reset UA <button> fill; variants below set their own */
   overflow: hidden;
   isolation: isolate;
   font-size: 15px;

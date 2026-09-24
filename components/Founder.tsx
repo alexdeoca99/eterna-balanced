@@ -27,8 +27,8 @@ export default function Founder() {
       );
       gsap.fromTo(
         `.${s.frame} img`,
-        { scale: 1.3, yPercent: -6 },
-        { scale: 1.05, yPercent: 6, ease: "none", scrollTrigger: { trigger: ref.current, start: "top bottom", end: "bottom top", scrub: true } }
+        { scale: 1.15 },
+        { scale: 1, transformOrigin: "50% 0%", ease: "none", scrollTrigger: { trigger: ref.current, start: "top bottom", end: "bottom top", scrub: true } }
       );
       const split = SplitText.create(`.${s.name}`, { type: "chars", mask: "chars" });
       gsap.from(split.chars, {

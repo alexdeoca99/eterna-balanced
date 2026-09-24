@@ -10,6 +10,8 @@
 ## Fixed bugs — don't reintroduce
 - 2026-09-24: Pricing "Single visits" tab crashed page → free plan has no [data-price] node → guard null before count-up.
 
+- 2026-09-24: Placeholder CTAs rendered white with invisible text → <button> kept UA default background → `.btn { background: none }`.
+
 ## Current status
 - Single-page homepage done: hero, marquee, mission, symptoms checker, pinned process, root diagram, founder, services, pricing, quiz, FAQ, closing, footer.
 - No DESIGN.md / impeccable passes yet (skipped per user request).
