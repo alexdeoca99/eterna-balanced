@@ -1,0 +1,143 @@
+.faq {
+  padding: clamp(100px, 12vw, 170px) 0;
+  background: var(--bone);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(40px, 6vw, 100px);
+  align-items: start;
+}
+
+.head {
+  position: sticky;
+  top: 120px;
+}
+
+.head h2 {
+  margin: 24px 0 20px;
+  font-size: clamp(56px, 7vw, 112px);
+  line-height: 0.92;
+}
+
+.head em {
+  color: var(--rose-deep);
+}
+
+.head > p:last-child {
+  max-width: 320px;
+  color: var(--muted);
+}
+
+.item {
+  border-top: 1px solid var(--line);
+}
+
+.item:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.item h3 {
+  font-size: inherit;
+  letter-spacing: 0;
+  line-height: inherit;
+}
+
+.item button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  padding: 28px 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  font-family: var(--serif);
+  font-size: clamp(22px, 2.2vw, 30px);
+  line-height: 1.15;
+  transition: color 0.4s, padding 0.6s var(--ease);
+}
+
+.item button:hover,
+.item[data-open="true"] button {
+  color: var(--rose-deep);
+}
+
+.item button:hover {
+  padding-left: 10px;
+}
+
+.icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  transition: background 0.4s, rotate 0.6s var(--ease), border-color 0.4s;
+}
+
+.icon::before,
+.icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 1.5px;
+  margin: -0.75px 0 0 -6px;
+  background: currentColor;
+}
+
+.icon::after {
+  rotate: 90deg;
+  transition: rotate 0.6s var(--ease);
+}
+
+.item[data-open="true"] .icon {
+  background: var(--rose);
+  border-color: var(--rose);
+  color: var(--paper);
+  rotate: 180deg;
+}
+
+.item[data-open="true"] .icon::after {
+  rotate: 0deg;
+}
+
+.answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.6s var(--ease);
+}
+
+.item[data-open="true"] .answer {
+  grid-template-rows: 1fr;
+}
+
+.answer p {
+  min-height: 0;
+  overflow: hidden;
+  max-width: 620px;
+  color: var(--muted);
+  opacity: 0;
+  translate: 0 10px;
+  transition: opacity 0.5s, translate 0.6s var(--ease), padding 0.6s var(--ease);
+}
+
+.item[data-open="true"] .answer p {
+  padding-bottom: 30px;
+  opacity: 1;
+  translate: 0 0;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .head {
+    position: static;
+  }
+}

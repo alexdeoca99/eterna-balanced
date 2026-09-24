@@ -1,0 +1,80 @@
+.footer {
+  padding: 80px 0 32px;
+  background: var(--ink);
+  color: rgba(247, 242, 237, 0.7);
+  border-top: 1px solid var(--line-light);
+  font-size: 15px;
+}
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.mark {
+  display: block;
+  width: 88px;
+  height: 42px;
+  margin-bottom: 20px;
+  background: var(--rose-soft);
+  mask: url(/img/mark.png) center / contain no-repeat;
+  -webkit-mask: url(/img/mark.png) center / contain no-repeat;
+}
+
+.cols {
+  display: flex;
+  gap: clamp(48px, 8vw, 120px);
+}
+
+.cols div {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.cols h4 {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose-soft);
+}
+
+.cols a {
+  width: fit-content;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  transition: background-size 0.5s var(--ease), color 0.3s;
+}
+
+.cols a:hover {
+  color: var(--bone);
+  background-size: 100% 1px;
+}
+
+.word {
+  margin: 80px 0 24px;
+  font-family: var(--serif);
+  font-size: clamp(64px, 15.5vw, 250px);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: var(--bone);
+  white-space: nowrap;
+}
+
+.word em {
+  color: var(--rose);
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line-light);
+  font-size: 13px;
+  color: rgba(247, 242, 237, 0.5);
+}

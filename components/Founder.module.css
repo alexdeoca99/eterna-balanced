@@ -1,0 +1,146 @@
+.founder {
+  padding: clamp(100px, 12vw, 180px) 0;
+  background: var(--bone);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(48px, 7vw, 120px);
+  align-items: center;
+}
+
+.visual {
+  position: relative;
+}
+
+.frame {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 200px 200px 24px 24px;
+  background: var(--blush);
+}
+
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 8%;
+}
+
+.badge {
+  position: absolute;
+  right: -40px;
+  bottom: 60px;
+  width: 160px;
+  height: 160px;
+  padding: 6px;
+  border-radius: 50%;
+  background: var(--ink);
+  fill: var(--rose-soft);
+  font-size: 15.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  animation: spin 22s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+.badgeMark {
+  position: absolute;
+  right: -40px;
+  bottom: 60px;
+  width: 160px;
+  height: 160px;
+  background: var(--gold);
+  mask: url(/img/mark.png) center / 44% no-repeat;
+  -webkit-mask: url(/img/mark.png) center / 44% no-repeat;
+}
+
+.name {
+  margin: 24px 0 32px;
+  font-size: clamp(56px, 7.6vw, 124px);
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+}
+
+.quote {
+  margin: 0 0 28px;
+  font-family: var(--serif);
+  font-size: clamp(26px, 2.6vw, 38px);
+  line-height: 1.15;
+  color: var(--plum);
+}
+
+.quote em {
+  color: var(--rose-deep);
+}
+
+.text > p {
+  max-width: 560px;
+  color: var(--muted);
+}
+
+.cred {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 16px;
+  margin-top: 24px;
+  padding: 18px 0;
+  border-block: 1px solid var(--line);
+  font-size: 15px;
+}
+
+.cred span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+}
+
+.approach {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 36px 0 44px;
+  padding: 0;
+  list-style: none;
+}
+
+.approach b {
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+.approach span {
+  font-size: 14.5px;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .visual {
+    max-width: 480px;
+  }
+  .badge,
+  .badgeMark {
+    right: -8px;
+    width: 120px;
+    height: 120px;
+  }
+  .approach {
+    grid-template-columns: 1fr;
+  }
+}

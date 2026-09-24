@@ -1,0 +1,62 @@
+.closing {
+  position: relative;
+  padding: clamp(140px, 16vw, 240px) 0 clamp(100px, 12vw, 160px);
+  background: var(--ink);
+  color: var(--bone);
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(1400px, 130vw);
+  translate: -50% -50%;
+  z-index: -1;
+  overflow: visible;
+}
+
+.lem,
+.lemGlow {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.lem {
+  stroke: rgba(168, 123, 127, 0.35);
+  stroke-width: 1.2;
+}
+
+.lemGlow {
+  stroke: var(--gold);
+  stroke-width: 2.4;
+  filter: drop-shadow(0 0 8px rgba(207, 167, 127, 0.8));
+}
+
+.eyebrow {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 26px;
+  color: var(--rose-soft);
+}
+
+.title {
+  max-width: 1100px;
+  margin: 28px auto 48px;
+  font-size: clamp(46px, 7vw, 116px);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.title em {
+  color: var(--rose-soft);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}

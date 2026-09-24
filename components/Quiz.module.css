@@ -1,0 +1,133 @@
+.quiz {
+  padding: clamp(100px, 12vw, 170px) 0;
+  background: var(--blush);
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 7vw, 110px);
+  align-items: center;
+}
+
+.gauge {
+  position: relative;
+  max-width: 520px;
+  width: 100%;
+  justify-self: center;
+}
+
+.gauge svg {
+  width: 100%;
+  overflow: visible;
+}
+
+.track,
+.fill {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.track {
+  stroke: rgba(139, 95, 99, 0.16);
+  stroke-width: 16;
+}
+
+.fill {
+  stroke: var(--rose);
+  stroke-width: 16;
+}
+
+.tickMark {
+  stroke: var(--rose-deep);
+  stroke-width: 1.5;
+  opacity: 0.5;
+}
+
+.needle line {
+  stroke: var(--ink);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.needle circle {
+  fill: var(--ink);
+}
+
+.readout {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4%;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.score {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(72px, 9vw, 120px);
+  line-height: 0.9;
+  font-variant-numeric: tabular-nums;
+}
+
+.readout span {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+}
+
+.copy h2 {
+  margin: 24px 0;
+  font-size: clamp(44px, 5.6vw, 88px);
+  line-height: 0.95;
+}
+
+.copy em {
+  color: var(--rose-deep);
+}
+
+.copy > p {
+  max-width: 480px;
+  color: var(--muted);
+}
+
+.copy ul {
+  display: grid;
+  gap: 14px;
+  margin: 32px 0 40px;
+  padding: 0;
+  list-style: none;
+}
+
+.copy li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.copy li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 12.5l3 3 7-7' fill='none' stroke='%23f7f2ed' stroke-width='1.8'/%3E%3C/svg%3E") center / 18px no-repeat,
+    var(--rose);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

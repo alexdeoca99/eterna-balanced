@@ -1,0 +1,153 @@
+.process {
+  background: var(--bone);
+}
+
+.pin {
+  position: relative;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: clamp(40px, 5vw, 80px);
+  width: max-content;
+  padding: 0 var(--gutter);
+  will-change: transform;
+}
+
+.vineSvg {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 200px;
+  translate: 0 -30%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.vine {
+  fill: none;
+  stroke: var(--rose);
+  stroke-width: 1.4;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.55;
+}
+
+.head {
+  position: relative;
+  width: min(560px, 80vw);
+  flex-shrink: 0;
+  margin-right: clamp(40px, 8vw, 140px);
+}
+
+.head h2 {
+  margin: 28px 0 24px;
+  font-size: clamp(48px, 6.4vw, 104px);
+  line-height: 0.95;
+}
+
+.head em {
+  color: var(--rose-deep);
+}
+
+.head > p:last-child {
+  max-width: 400px;
+  color: var(--muted);
+}
+
+.step {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: clamp(300px, 30vw, 440px);
+  padding: 40px 36px 44px;
+  border-radius: 28px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: 0 30px 60px -30px rgba(74, 48, 51, 0.18);
+}
+
+.step:nth-child(odd) {
+  margin-top: 16vh;
+}
+
+.step:nth-child(even) {
+  margin-bottom: 16vh;
+}
+
+.num {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(90px, 10vw, 150px);
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--rose);
+}
+
+.step h3 {
+  margin: 36px 0 14px;
+  font-size: clamp(30px, 2.6vw, 40px);
+}
+
+.step p {
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 44px;
+}
+
+.bar i {
+  display: block;
+  height: 2px;
+  background: var(--rose);
+  transform: scaleX(0);
+  transform-origin: left;
+  box-shadow: 0 0 0 0 transparent;
+}
+
+.bar::before {
+  content: "";
+  position: absolute;
+  left: var(--gutter);
+  right: var(--gutter);
+  height: 2px;
+  background: var(--line);
+}
+
+@media (max-width: 900px), (prefers-reduced-motion: reduce) {
+  .pin {
+    height: auto;
+    padding: 100px 0;
+  }
+  .track {
+    flex-direction: column;
+    align-items: stretch;
+    width: auto;
+  }
+  .vineSvg,
+  .bar {
+    display: none;
+  }
+  .head {
+    width: auto;
+    margin: 0 0 20px;
+  }
+  .step,
+  .step:nth-child(odd),
+  .step:nth-child(even) {
+    width: auto;
+    margin: 0;
+  }
+}
