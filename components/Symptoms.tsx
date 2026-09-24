@@ -131,7 +131,7 @@ export default function Symptoms() {
               )}
             </div>
             <div className={s.panelFoot} data-show={n > 0}>
-              <Button quiz variant="light">
+              <Button variant="light">
                 See your Hormone Health Score
               </Button>
             </div>

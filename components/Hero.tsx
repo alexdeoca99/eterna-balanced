@@ -3,7 +3,6 @@ import { useRef } from "react";
 import { gsap, SplitText, useGSAP } from "./gsap";
 import InfinityField from "./InfinityField";
 import Button from "./Button";
-import { BOOK } from "./Nav";
 import s from "./Hero.module.css";
 
 export default function Hero() {
@@ -45,10 +44,10 @@ export default function Hero() {
               symptoms, delivered through telemedicine from the comfort of home.
             </p>
             <div className={`${s.actions} ${s.fade}`}>
-              <Button quiz variant="light">
+              <Button variant="light">
                 Get your Hormone Health Score
               </Button>
-              <Button href={BOOK} variant="ghostLight">
+              <Button variant="ghostLight">
                 Book a free consult
               </Button>
             </div>

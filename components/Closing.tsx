@@ -2,7 +2,6 @@
 import { useRef } from "react";
 import { gsap, SplitText, useGSAP } from "./gsap";
 import Button from "./Button";
-import { BOOK } from "./Nav";
 import s from "./Closing.module.css";
 
 // Lemniscate of Bernoulli as an SVG path
@@ -46,10 +45,10 @@ export default function Closing() {
           You don&apos;t have to keep <em>guessing</em> what your symptoms mean.
         </h2>
         <div className={s.actions}>
-          <Button quiz variant="light">
+          <Button variant="light">
             Discover your Hormone Health Score
           </Button>
-          <Button href={BOOK} variant="ghostLight">
+          <Button variant="ghostLight">
             Book a free consult
           </Button>
         </div>

@@ -1,20 +1,18 @@
 "use client";
 import { useRef } from "react";
 import { gsap, useGSAP } from "./gsap";
-import { openQuiz } from "./QuizModal";
 import s from "./Button.module.css";
 
 type Props = {
   children: React.ReactNode;
   href?: string;
-  quiz?: boolean;
   variant?: "primary" | "light" | "ghost" | "ghostLight";
   arrow?: boolean;
   className?: string;
 };
 
 // Magnetic pill: the whole button drifts toward the pointer, the label drifts further.
-export default function Button({ children, href, quiz, variant = "primary", arrow = true, className = "" }: Props) {
+export default function Button({ children, href, variant = "primary", arrow = true, className = "" }: Props) {
   const ref = useRef<HTMLAnchorElement & HTMLButtonElement>(null);
 
   useGSAP(() => {
@@ -52,9 +50,10 @@ export default function Button({ children, href, quiz, variant = "primary", arro
   );
   const cls = `${s.btn} ${s[variant]} ${className}`;
 
-  if (quiz)
+  // No href = placeholder CTA. Booking, forms and payments are intentionally not connected.
+  if (!href)
     return (
-      <button ref={ref} type="button" className={cls} onClick={openQuiz}>
+      <button ref={ref} type="button" className={cls}>
         {inner}
       </button>
     );

@@ -4,8 +4,6 @@ import { gsap, useGSAP } from "./gsap";
 import Button from "./Button";
 import s from "./Pricing.module.css";
 
-const B = "https://eternabalanced.com/";
-
 type Plan = {
   name: string;
   price: number;
@@ -13,7 +11,6 @@ type Plan = {
   desc: string;
   items?: string[];
   note?: string;
-  href: string;
   featured?: boolean;
 };
 
@@ -26,7 +23,6 @@ const plans: Record<"programs" | "visits", Plan[]> = {
       desc: "Begin regulating hormones and supporting fertility by correcting imbalances in hormones, gut health, stress physiology and metabolic function.",
       items: ["Initial functional medicine assessment", "3 follow-up care sessions", "Functional lab review & interpretation", "Personalized nutrition, lifestyle & supplement plan", "Ongoing care guidance"],
       note: "Best for women early in their healing journey, trying to conceive, or wanting structured short-term support.",
-      href: B + "hormone_optimization/",
     },
     {
       name: "Signature Care Package",
@@ -35,7 +31,6 @@ const plans: Record<"programs" | "visits", Plan[]> = {
       desc: "Comprehensive, high-touch support for complex hormone, fertility or metabolic concerns, with the time to adjust protocols as your body responds.",
       items: ["Initial functional medicine assessment", "5–6 follow-up care sessions", "Advanced lab testing support & interpretation", "Ongoing protocol adjustments", "Structured messaging support between sessions"],
       note: "Best for preconception, postpartum restoration, perimenopause and long-standing imbalance.",
-      href: B + "signature-care-package/",
       featured: true,
     },
   ],
@@ -45,7 +40,6 @@ const plans: Record<"programs" | "visits", Plan[]> = {
       price: 0,
       unit: "15 min · phone or video",
       desc: "A one-on-one session to uncover what's going on beneath the surface and map out a personalized strategy. Complimentary for a limited time.",
-      href: B + "consultation/",
       featured: true,
     },
     {
@@ -54,7 +48,6 @@ const plans: Record<"programs" | "visits", Plan[]> = {
       unit: "1 hour · phone or video",
       desc: "A comprehensive initial session to identify root causes of hormone imbalance, fertility challenges and chronic symptoms, and outline your plan.",
       note: "Required before ongoing care or follow-ups.",
-      href: B + "new-patient/",
     },
     {
       name: "Follow-Up Appointment",
@@ -62,7 +55,6 @@ const plans: Record<"programs" | "visits", Plan[]> = {
       unit: "30 min · phone or video",
       desc: "Review lab results, assess progress, refine protocols and address ongoing symptoms with thoughtful adjustments.",
       note: "For established clients.",
-      href: B + "virtual-follow-up/",
     },
   ],
 };
@@ -164,7 +156,7 @@ export default function Pricing() {
                 </ul>
               )}
               {p.note && <p className={s.note}>{p.note}</p>}
-              <Button href={p.href} variant={p.featured ? "light" : "ghostLight"} className={s.cta}>
+              <Button variant={p.featured ? "light" : "ghostLight"} className={s.cta}>
                 Book now
               </Button>
             </article>

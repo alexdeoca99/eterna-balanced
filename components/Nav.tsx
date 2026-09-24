@@ -4,8 +4,6 @@ import { gsap, ScrollTrigger, useGSAP } from "./gsap";
 import Button from "./Button";
 import s from "./Nav.module.css";
 
-export const BOOK = "https://eternabalanced.com/consultation/";
-
 const links = [
   ["Approach", "#mission"],
   ["Process", "#process"],
@@ -44,7 +42,7 @@ export default function Nav() {
         ))}
       </nav>
       <div className={s.cta}>
-        <Button href={BOOK} variant="light" arrow={false}>
+        <Button variant="light" arrow={false}>
           Book free consult
         </Button>
       </div>

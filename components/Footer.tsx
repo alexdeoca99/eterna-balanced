@@ -1,7 +1,5 @@
 import s from "./Footer.module.css";
 
-const B = "https://eternabalanced.com/";
-
 export default function Footer() {
   return (
     <footer className={s.footer}>
@@ -25,8 +23,8 @@ export default function Footer() {
             </div>
             <div>
               <h4>Get started</h4>
-              <a href={B + "consultation/"}>Free consult</a>
-              <a href={B + "new-patient/"}>New patient visit</a>
+              <a href="#pricing">Free consult</a>
+              <a href="#quiz">Hormone Health Score</a>
               <a href="#pricing">Pricing</a>
               <a href="#faq">FAQ</a>
             </div>

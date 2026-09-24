@@ -2,7 +2,6 @@
 import { useRef } from "react";
 import { gsap, useGSAP } from "./gsap";
 import Button from "./Button";
-import { BOOK } from "./Nav";
 import s from "./Quiz.module.css";
 
 const points = [
@@ -91,10 +90,10 @@ export default function Quiz() {
             ))}
           </ul>
           <div className={s.actions}>
-            <Button quiz variant="primary">
+            <Button variant="primary">
               Take the quiz
             </Button>
-            <Button href={BOOK} variant="ghost" arrow={false}>
+            <Button variant="ghost" arrow={false}>
               Or book directly
             </Button>
           </div>

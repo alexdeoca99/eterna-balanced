@@ -3,7 +3,6 @@ import { useRef } from "react";
 import Image from "next/image";
 import { gsap, SplitText, useGSAP } from "./gsap";
 import Button from "./Button";
-import { BOOK } from "./Nav";
 import s from "./Founder.module.css";
 
 const approach = [
@@ -100,7 +99,7 @@ export default function Founder() {
             ))}
           </ul>
           <div className={s.reveal}>
-            <Button href={BOOK}>Book with Dr. Rouse</Button>
+            <Button>Book with Dr. Rouse</Button>
           </div>
         </div>
       </div>

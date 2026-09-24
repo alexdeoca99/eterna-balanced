@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Instrument_Serif, Instrument_Sans } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
 import Cursor from "@/components/Cursor";
-import QuizModal from "@/components/QuizModal";
 import "./globals.css";
 
 const serif = Instrument_Serif({
@@ -35,7 +34,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SmoothScroll />
         <Cursor />
         {children}
-        <QuizModal />
       </body>
     </html>
   );
