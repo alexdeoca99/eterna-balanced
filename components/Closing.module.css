@@ -32,6 +32,7 @@
 .lemGlow {
   stroke: var(--gold);
   stroke-width: 2.4;
+  stroke-dasharray: 8 92;
   filter: drop-shadow(0 0 8px rgba(207, 167, 127, 0.8));
 }
 

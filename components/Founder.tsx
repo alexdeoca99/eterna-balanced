@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 import Image from "next/image";
-import { gsap, SplitText, useGSAP } from "./gsap";
+import { fontsReady, gsap, SplitText, useGSAP } from "./gsap";
 import Button from "./Button";
 import s from "./Founder.module.css";
 
@@ -14,7 +14,7 @@ const approach = [
 export default function Founder() {
   const ref = useRef<HTMLElement>(null);
   useGSAP(
-    () => {
+    (_, contextSafe) => {
       gsap.fromTo(
         `.${s.frame}`,
         { clipPath: "inset(100% 0% 0% 0% round 200px 200px 24px 24px)" },
@@ -30,14 +30,19 @@ export default function Founder() {
         { scale: 1.15 },
         { scale: 1, transformOrigin: "50% 0%", ease: "none", scrollTrigger: { trigger: ref.current, start: "top bottom", end: "bottom top", scrub: true } }
       );
-      const split = SplitText.create(`.${s.name}`, { type: "chars", mask: "chars" });
-      gsap.from(split.chars, {
-        yPercent: 100,
-        duration: 1.2,
-        stagger: 0.03,
-        ease: "expo.out",
-        scrollTrigger: { trigger: `.${s.name}`, start: "top 85%" },
-      });
+      // words wrap the chars so the name only breaks between words ("Rou/se" broke mid-word)
+      fontsReady().then(
+        contextSafe!(() => {
+          const split = SplitText.create(`.${s.name}`, { type: "words,chars", mask: "chars" });
+          gsap.from(split.chars, {
+            yPercent: 100,
+            duration: 1.2,
+            stagger: 0.03,
+            ease: "expo.out",
+            scrollTrigger: { trigger: `.${s.name}`, start: "top 85%" },
+          });
+        })
+      );
       gsap.from(`.${s.reveal}`, {
         y: 40,
         opacity: 0,

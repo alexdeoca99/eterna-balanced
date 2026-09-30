@@ -150,3 +150,15 @@ img {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* hero intro waits for GSAP; the 6s safety net only matters if scripts fail (keep it longer than a cold load) */
+html.js [data-intro] {
+  visibility: hidden;
+  animation: intro-fallback 0s 6s forwards;
+}
+
+@keyframes intro-fallback {
+  to {
+    visibility: visible;
+  }
+}

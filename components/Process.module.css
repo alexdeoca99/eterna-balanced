@@ -36,7 +36,6 @@
   fill: none;
   stroke: var(--rose);
   stroke-width: 1.4;
-  vector-effect: non-scaling-stroke;
   opacity: 0.55;
 }
 

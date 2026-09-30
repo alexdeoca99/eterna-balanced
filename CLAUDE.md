@@ -12,6 +12,11 @@
 
 - 2026-09-24: Placeholder CTAs rendered white with invisible text → <button> kept UA default background → `.btn { background: none }`.
 
+- 2026-09-30: Hero/headings flashed then re-animated on first (uncached) load → text rendered before GSAP hid it, and SplitText ran on the fallback font → hero `[data-intro]` pre-hidden via `html.js` (6s CSS safety net), splits wait for `fontsReady()` in `components/gsap.ts`.
+- 2026-09-30: Founder name broke mid-word ("Rou/se") → `type: "chars"` split lets lines break between letters → split `words,chars`.
+- 2026-09-30: Process vine showed fully drawn → `vector-effect: non-scaling-stroke` breaks DrawSVG length math → removed it.
+- 2026-09-30: Closing infinity trace jumped at the right tip on each loop → drawSVG `0–8%` → `92–100%` restarted → dash pattern with `pathLength={100}` and a looping `strokeDashoffset`.
+
 ## Current status
 - Single-page homepage done: hero, marquee, mission, symptoms checker, pinned process, root diagram, founder, services, pricing, quiz, FAQ, closing, footer.
 - No DESIGN.md / impeccable passes yet (skipped per user request).
